@@ -1,0 +1,34 @@
+<launch>
+<let name="urdf_path" value="$(find-pkg-share amr_description)/urdf/amr.urdf.xacro" />
+<let name="gazebo_config_path" value="$(find-pkg-share amr_bringup)/config/gazebo_bridge.yaml" />
+
+<node pkg="robot_state_publisher" exec="robot_state_publisher">
+    <param name="robot_description" value="$(command 'xacro $(var urdf_path)')"/>
+</node>
+
+<!-- below include ensures that when we run the gazebo sim we are able to start the empty environment -->
+<include
+    file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+    <arg name="gz_args" value="empty.sdf -r" />
+</include>
+
+<!-- below node is responsible for spawning the robot in the gazebo using the robot_description topic -->
+<node pkg="ros_gz_sim" exec="create" args="-topic robot_description"/>
+
+<!-- below node allows us to bridge the ros2 and gazebo using the config file we created in config folder -->
+<node pkg="ros_gz_bridge" exec="parameter_bridge">
+    <param name="config_file" value="$(var gazebo_config_path)" />
+</node>
+
+<node pkg="sensor_integration" exec="sensor_publisher">
+    <param name="serial_port" value="/dev/ttyACM0" />
+</node>
+
+<node pkg="amr_control" exec="obstacle_avoidance" />
+
+<include
+    file="$(find-pkg-share teleop_twist_joy)/launch/teleop-launch.py">
+    <arg name="joy_config" value="xbox" />
+</include>
+
+</launch>
