@@ -64,7 +64,7 @@
 git clone https://github.com/MurtazaChulawala/joystick-control-and-obstacle-avoidance-robot.git
 cd joystick-control-and-obstacle-avoidance-robot/
 colcon build --symlink-install
-source install/setup.bash
+source ./install/setup.bash
 ```
 
 ### **Configuring the parameter of serial_port in amr.launch.xml for arduino connection**
