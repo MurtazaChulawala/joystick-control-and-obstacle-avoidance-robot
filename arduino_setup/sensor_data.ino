@@ -10,7 +10,7 @@ void setup() {
 }
 
 void loop() {
-  delay(1000);
+  delay(200);
   int reading1 = sensor1.ping_cm();
   if(reading1 != 0){
     Serial.println(reading1);
