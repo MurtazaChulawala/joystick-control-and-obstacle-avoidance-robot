@@ -66,9 +66,15 @@ colcon build --symlink-install
 source install/setup.bash
 ```
 
+### **Configuring the parameter of serial_port in amr.launch.xml for arduino connection**
+- Run the following command in bash terminal to find the serial port to which the arduino is connected.
+```bash
+ls /dev/tty*
+```
+- After running the above command you shall see something like /dev/ttyACM0 or ACM? any number just check the number and come to src/amr_bringup/launch/amr.launch.xml and find the node declaration for sensor_integration there below you will see param name="serial_port" beside it will be the value just change the value to what you are seeing in your terminal after running the above command and save.
+  
 ### **Launch the full system**
 `ros2 launch amr_bringup amr.launch.xml`
-
 
 ### **Control the robot**
 - Use the joystick left stick for motion
