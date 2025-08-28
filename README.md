@@ -61,7 +61,7 @@
 ### **Build the workspace**
 ```bash
 git clone https://github.com/MurtazaChulawala/joystick-control-and-obstacle-avoidance-robot.git
-cd amr_system_ws/
+cd joystick-control-and-obstacle-avoidance-robot/
 colcon build --symlink-install
 source install/setup.bash
 ```
