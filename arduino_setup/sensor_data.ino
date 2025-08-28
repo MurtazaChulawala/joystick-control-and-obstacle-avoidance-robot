@@ -13,7 +13,6 @@ void loop() {
   delay(1000);
   int reading1 = sensor1.ping_cm();
   if(reading1 != 0){
-    Serial.print("totalDistance = ");
     Serial.println(reading1);
   }
 }
