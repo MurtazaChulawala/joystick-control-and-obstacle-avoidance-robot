@@ -37,7 +37,7 @@
 
 ## Project Structure
 ```text
-📂 joystick-control-and-obstacle-avoidance-robot//
+📂 joystick-control-and-obstacle-avoidance-robot/
 ├── src/
 │   ├── sensor_integration/     > Reads & publishes ultrasonic data
 │   ├── amr_bringup/            > Launch & config files for Gazebo
