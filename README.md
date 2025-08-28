@@ -37,16 +37,17 @@
 
 ## Project Structure
 ```text
-📂 amr_system_ws/
+📂 joystick-control-and-obstacle-avoidance-robot//
 ├── src/
 │   ├── sensor_integration/     > Reads & publishes ultrasonic data
 │   ├── amr_bringup/            > Launch & config files for Gazebo
 │   ├── amr_control/            > Safety override (mediator node)
 │   └── amr_description/        > URDF & robot simulation setup
 📂 arduino_setup/
-│   ├── setup.png               > Wiring diagram
+│   ├── png file                > Wiring diagram
 │   └── sensor_data.ino         > Arduino sketch for HC-SR04
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ## ⚙️ Requirements
