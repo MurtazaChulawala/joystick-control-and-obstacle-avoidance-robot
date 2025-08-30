@@ -9,7 +9,7 @@
 - Demonstrate modular robotics development, integrating simulation, sensor data, and teleoperation into a unified ROS 2 workspace.
 ---
 ## 📹 Demo Video
-👉 [YouTube link – coming soon]
+👉 https://youtu.be/Oic9gRbnlDk
 
 ## 🚀 Features
 - **Robot description & state publishing**
